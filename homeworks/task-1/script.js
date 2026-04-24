@@ -1,10 +1,10 @@
-let massMark = 78;
-let heightMark = 1.69;
+let massMark = 90;
+let heightMark =1.9;
 
-let massJohn = 92;
-let heightJohn = 1.95;
+let massJohn = 80;
+let heightJohn = 1.75;
 
-const BMIMark = massMark / (heightMark ** 2);
+const BMIMark = massMark / heightMark ** 2;
 const BMIJohn = massJohn / (heightJohn * heightJohn);
 
 
