@@ -72,7 +72,7 @@ function dualCalc(arr) {
             console.log(arr[i]);
         }
 
-        if (arr[i] % 2 === 1) {
+        if (arr[i] % 2 === 0) {
             even += 1;
         } else {
             odd += 1;
