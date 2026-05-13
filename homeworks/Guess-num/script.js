@@ -1,5 +1,4 @@
 'use strict';
-
 const MESSAGES = {
     noInput: '⛔️ No number!',
     tooHigh: '📈 Too high!',
