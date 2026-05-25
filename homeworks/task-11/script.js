@@ -467,3 +467,9 @@ const sumHighest = orders.reduce((acc, cur) => {
 
 const highestPrice = sumHighest.quantity * sumHighest.price;
 console.log(highestPrice);
+
+
+const quantitySum = orders.reduce((acc, cur) => {
+   return acc + cur.quantity;
+}, 0);
+console.log(quantitySum);
