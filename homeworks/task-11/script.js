@@ -445,3 +445,25 @@ do {
 } while (countdown >= 1);
 
 console.log("Go!");
+
+/////////////////////////////////////////
+const orders = [
+   { product: 'Laptop', quantity: 2, price: 999 },
+   { product: 'Phone', quantity: 5, price: 699 },
+   { product: 'Tablet', quantity: 3, price: 450 },
+   { product: 'Mouse', quantity: 10, price: 25 },
+   { product: 'Keyboard', quantity: 4, price: 75 },
+];
+
+const sum = orders.reduce((acc, cur) => {
+   return acc + (cur.quantity * cur.price);
+}, 0);
+
+console.log(sum);
+
+const sumHighest = orders.reduce((acc, cur) => {
+   return (acc.quantity * acc.price) > (cur.quantity * cur.price) ? acc : cur;
+});
+
+const highestPrice = sumHighest.quantity * sumHighest.price;
+console.log(highestPrice);
