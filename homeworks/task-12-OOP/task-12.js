@@ -183,9 +183,9 @@ constructor ფუნქციით, დაამატეთ ქცევა �
 // ჩელენჯი #1 — ცხოველთა სამეფო (ამოხსნა)
 // 1. და 2. Constructor ფუნქციის შექმნა 'Animal'
 function Animal(species, name, sound) {
-    this.species = species;
-    this.name = name;
-    this.sound = sound;
+   this.species = species;
+   this.name = name;
+   this.sound = sound;
 }
 
 // 3. სამი ცხოველის ინსტანციის შექმნა 'new' ოპერატორით
@@ -222,23 +222,23 @@ console.log(fish instanceof Animal); // false
 // ჩელენჯი #2 — პროტოტიპის ძალა (ამოხსნა)
 // 1. Constructor ფუნქცია 'Smartphone'
 function Smartphone(brand, model, batteryLevel) {
-    this.brand = brand;
-    this.model = model;
-    this.batteryLevel = batteryLevel;
+   this.brand = brand;
+   this.model = model;
+   this.batteryLevel = batteryLevel;
 }
 
 // 2. 'call' მეთოდის დამატება პროტოტიპზე
 Smartphone.prototype.call = function (contact) {
-    console.log(`Calling ${contact} from ${this.brand} ${this.model}...`);
+   console.log(`Calling ${contact} from ${this.brand} ${this.model}...`);
 };
 
 // 3. 'checkBattery' მეთოდის დამატება პროტოტიპზე
 Smartphone.prototype.checkBattery = function () {
-    if (this.batteryLevel > 20) {
-        console.log(`Battery at ${this.batteryLevel}%`);
-    } else {
-        console.log(`Low battery! Only ${this.batteryLevel}% left!`);
-    }
+   if (this.batteryLevel > 20) {
+      console.log(`Battery at ${this.batteryLevel}%`);
+   } else {
+      console.log(`Low battery! Only ${this.batteryLevel}% left!`);
+   }
 };
 
 // 4. ორი ინსტანციის შექმნა
@@ -264,26 +264,26 @@ console.log(phone1.__proto__ === Smartphone.prototype); // true
 // ჩელენჯი #3 — სატრანსპორტო ქარხანა (ამოხსნა)
 // 1. Constructor ფუნქცია 'Vehicle'
 function Vehicle(make, model, speed) {
-    this.make = make;
-    this.model = model;
-    this.speed = speed;
+   this.make = make;
+   this.model = model;
+   this.speed = speed;
 }
 
 // 2. 'accelerate' მეთოდი პროტოტიპზე
 Vehicle.prototype.accelerate = function () {
-    this.speed += 20;
-    console.log(`${this.make} ${this.model} accelerates to ${this.speed} km/h`);
+   this.speed += 20;
+   console.log(`${this.make} ${this.model} accelerates to ${this.speed} km/h`);
 };
 
 // 3. 'brake' მეთოდი პროტოტიპზე (მინიმუმ 0 სიჩქარე)
 Vehicle.prototype.brake = function () {
-    this.speed = Math.max(0, this.speed - 15);
-    console.log(`${this.make} ${this.model} brakes to ${this.speed} km/h`);
+   this.speed = Math.max(0, this.speed - 15);
+   console.log(`${this.make} ${this.model} brakes to ${this.speed} km/h`);
 };
 
 // 4. 'status' მეთოდი პროტოტიპზე
 Vehicle.prototype.status = function () {
-    console.log(`${this.make} ${this.model} is going ${this.speed} km/h`);
+   console.log(`${this.make} ${this.model} is going ${this.speed} km/h`);
 };
 
 // 5. სამი სატრანსპორტო საშუალების შექმნა
@@ -307,37 +307,37 @@ console.log(car1.__proto__.__proto__.__proto__); // null
 // ჩელენჯი #4 — სტატიკური vs ინსტანციის მეთოდები (ამოხსნა)
 // 1. Constructor ფუნქცია 'MathHelper'
 function MathHelper(value) {
-    this.value = value;
+   this.value = value;
 }
 
 // 2. სტატიკური მეთოდი 'isEven'
 MathHelper.isEven = function (num) {
-    return num % 2 === 0;
+   return num % 2 === 0;
 };
 
 // 3. სტატიკური მეთოდი 'celsiusToFahrenheit'
 MathHelper.celsiusToFahrenheit = function (celsius) {
-    return celsius * 9 / 5 + 32;
+   return celsius * 9 / 5 + 32;
 };
 
 // 4. სტატიკური მეთოდი 'factorial' (for ციკლით)
 MathHelper.factorial = function (num) {
-    if (num < 0) return undefined;
-    let result = 1;
-    for (let i = 1; i <= num; i++) {
-        result *= i;
-    }
-    return result;
+   if (num < 0) return undefined;
+   let result = 1;
+   for (let i = 1; i <= num; i++) {
+      result *= i;
+   }
+   return result;
 };
 
 // 5. ინსტანციის მეთოდი 'double'
 MathHelper.prototype.double = function () {
-    return this.value * 2;
+   return this.value * 2;
 };
 
 // 6. ინსტანციის მეთოდი 'isPositive'
 MathHelper.prototype.isPositive = function () {
-    return this.value > 0;
+   return this.value > 0;
 };
 
 // 7. ინსტანციის შექმნა და მისი მეთოდების გამოძახება
@@ -353,38 +353,38 @@ console.log(MathHelper.factorial(5));              // 120
 
 // ტესტი: სტატიკური მეთოდის გამოძახება ინსტანციაზე (არ იმუშავებს!)
 try {
-    helper.isEven(4);
+   helper.isEven(4);
 } catch (error) {
-    console.log("შეცდომა: ინსტანციას არ აქვს წვდომა სტატიკურ მეთოდზე!", error.message);
+   console.log("შეცდომა: ინსტანციას არ აქვს წვდომა სტატიკურ მეთოდზე!", error.message);
 }
 
 // =======================================================================================
 // ჩელენჯი #5 — კლასით რეფაქტორინგი (ამოხსნა)
 // 1. ES6 კლასი 'VehicleCl'
 class VehicleCl {
-    // კონსტრუქტორი
-    constructor(make, model, speed) {
-        this.make = make;
-        this.model = model;
-        this.speed = speed;
-    }
+   // კონსტრუქტორი
+   constructor(make, model, speed) {
+      this.make = make;
+      this.model = model;
+      this.speed = speed;
+   }
 
-    // 2. 'accelerate' მეთოდი (ავტომატურად ჯდება პროტოტიპზე)
-    accelerate() {
-        this.speed += 20;
-        console.log(`${this.make} ${this.model} accelerates to ${this.speed} km/h`);
-    }
+   // 2. 'accelerate' მეთოდი (ავტომატურად ჯდება პროტოტიპზე)
+   accelerate() {
+      this.speed += 20;
+      console.log(`${this.make} ${this.model} accelerates to ${this.speed} km/h`);
+   }
 
-    // 3. 'brake' მეთოდი
-    brake() {
-        this.speed = Math.max(0, this.speed - 15);
-        console.log(`${this.make} ${this.model} brakes to ${this.speed} km/h`);
-    }
+   // 3. 'brake' მეთოდი
+   brake() {
+      this.speed = Math.max(0, this.speed - 15);
+      console.log(`${this.make} ${this.model} brakes to ${this.speed} km/h`);
+   }
 
-    // 4. 'status' მეთოდი
-    status() {
-        console.log(`${this.make} ${this.model} is going ${this.speed} km/h`);
-    }
+   // 4. 'status' მეთოდი
+   status() {
+      console.log(`${this.make} ${this.model} is going ${this.speed} km/h`);
+   }
 }
 
 // 5. ორი ინსტანციის შექმნა
