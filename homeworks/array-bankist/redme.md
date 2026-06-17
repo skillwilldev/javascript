@@ -73,3 +73,26 @@ btnTransfer-ზე 'click' event listener დაამატე. ფუნქც
 */
 
 // შენი კოდი აქ:
+
+////////////////////////////////////
+// Challenge #8: Loan (Event Handler)
+////////////////////////////////////
+
+/*
+btnLoan-ზე 'click' event listener დაამატე. ფუნქციამ უნდა:
+
+1. e.preventDefault()
+2. inputLoanAmount.value-დან ამოიღე თანხა
+3. შეამოწმე 2 პირობა:
+   - amount > 0
+   - არსებობს თუნდაც ერთი movement, რომელიც >= მოთხოვნილი თანხის 10%-ს
+     (გამოიყენე some() მეთოდი: mov >= amount * 0.1)
+4. თუ OK:
+   - currentAccount.movements-ში push(amount)
+   - updateUI(currentAccount)
+5. გაასუფთავე input
+
+HINT: some() — აბრუნებს true/false, არსებობს თუ არა ელემენტი რომელიც აკმაყოფილებს პირობას
+
+ტესტი: მოითხოვე 500€ სესხი (Jonas-ს აქვს 3000€ deposit, 3000 * 0.1 = 300 < 500 ✅)
+*/
