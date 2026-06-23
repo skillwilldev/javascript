@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100..900&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans Georgian", sans-serif;
+    background: #f0f2f5;
+    color: #263238;
+    min-height: 100vh;
+    padding: 24px 16px;
+}
+
+.container {
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+/* ========== Welcome Banner ========== */
+.welcome-banner {
+    background: linear-gradient(135deg, #3949ab, #5c6bc0);
+    color: white;
+    padding: 32px 28px;
+    border-radius: 14px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.welcome-banner h1 {
+    font-size: 2rem;
+    margin-bottom: 6px;
+}
+
+.welcome-banner p {
+    font-size: 1.05rem;
+    opacity: 0.85;
+}
+
+/* ========== Cards ========== */
+.card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 22px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    color: #3949ab;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e8eaf6;
+}
+
+/* ========== Display Box ========== */
+.display-box {
+    background: #f8f8fc;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-family: "Courier New", monospace;
+    font-size: 0.9rem;
+    min-height: 40px;
+    margin-top: 12px;
+    white-space: pre-wrap;
+}
+
+/* ========== Profile Section ========== */
+.profile-section {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 16px;
+    background: #e8eaf6;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.student-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #7e57c2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    position: relative;
+
+    .avatar-letter {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -56%);
+        height: 33px;
+        font-size: 1.5rem;
+
+    }
+}
+
+.student-info h3 {
+    font-size: 1.1rem;
+    color: #283593;
+}
+
+.student-info p {
+    color: #666;
+    margin-top: 3px;
+    font-size: 0.9rem;
+}
+
+#profile-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ========== Demo Buttons ========== */
+.demo-btn {
+    background: #3949ab;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin: 4px;
+}
+
+.demo-btn:hover {
+    background: #283593;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+/* ========== Notifications ========== */
+.notification {
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.notification.urgent {
+    background: #ffebee;
+    color: #c62828;
+    border-left: 4px solid #e53935;
+}
+
+.notification.success {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border-left: 4px solid #43a047;
+}
+
+.notification.info {
+    background: #e3f2fd;
+    color: #1565c0;
+    border-left: 4px solid #1e88e5;
+}
+
+#notification-list {
+    min-height: 40px;
+}
+
+/* ========== Schedule Table ========== */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.schedule-table th {
+    background: #e8eaf6;
+    font-weight: 600;
+    color: #3949ab;
+    font-size: 0.9rem;
+}
+
+.schedule-table tr:hover {
+    background: #f5f5f5;
+}

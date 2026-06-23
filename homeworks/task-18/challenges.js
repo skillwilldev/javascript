@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 ////////////////////////////////////
 // DOM Manipulation — Challenges
@@ -45,51 +45,76 @@ GOOD LUCK 😀
 
 // --- Solution ---
 const students = [
-    { name: 'გიორგი ბერიძე', email: 'giorgi@skillwill.ge', role: 'Frontend Developer' },
-    { name: 'ნინო ლომიძე', email: 'nino@skillwill.ge', role: 'Backend Developer' },
-    { name: 'დათო ხარაიშვილი', email: 'dato@skillwill.ge', role: 'Full-Stack Developer' },
+  {
+    name: "გიორგი ბერიძე",
+    email: "giorgi@skillwill.ge",
+    role: "Frontend Developer",
+  },
+  {
+    name: "ნინო ლომიძე",
+    email: "nino@skillwill.ge",
+    role: "Backend Developer",
+  },
+  {
+    name: "დათო ხარაიშვილი",
+    email: "dato@skillwill.ge",
+    role: "Full-Stack Developer",
+  },
 ];
 
-const profileContainer = document.getElementById('profile-container');
-
+const profileContainer = document.getElementById("profile-container");
+const fragment = document.createDocumentFragment();
+// let html = "";
+let card = "";
 students.forEach(function (student) {
-    const card = document.createElement('div');
-    card.classList.add('profile-section');
+  card = document.createElement("div");
+  card.classList.add("profile-section");
 
-    const avatar = document.createElement('div');
-    avatar.classList.add('student-avatar');
+  const avatar = document.createElement("div");
+  avatar.classList.add("student-avatar");
 
-    const avatar__span = document.createElement('span');
-    avatar__span.className = 'avatar-letter';
+  const avatar__span = document.createElement("span");
+  avatar__span.className = "avatar-letter";
 
-    avatar__span.textContent = student.name.charAt(0);
-    avatar.appendChild(avatar__span)
+  avatar__span.textContent = student.name.charAt(0);
+  avatar.appendChild(avatar__span);
 
-    // avatar.textContent = student.name.charAt(0);
+  // avatar.textContent = student.name.charAt(0);
 
-    const info = document.createElement('div');
-    info.classList.add('student-info');
+  const info = document.createElement("div");
+  info.classList.add("student-info");
 
-    const nameEl = document.createElement('h3');
-    nameEl.textContent = student.name;
+  const nameEl = document.createElement("h3");
+  nameEl.textContent = student.name;
 
-    const emailEl = document.createElement('p');
-    emailEl.textContent = student.email;
+  const emailEl = document.createElement("p");
+  emailEl.textContent = student.email;
 
-    const roleEl = document.createElement('p');
-    roleEl.textContent = 'Role: ' + student.role;
+  const roleEl = document.createElement("p");
+  roleEl.textContent = "Role: " + student.role;
 
-    info.appendChild(nameEl);
-    info.appendChild(emailEl);
-    info.appendChild(roleEl);
+  info.appendChild(nameEl);
+  info.appendChild(emailEl);
+  info.appendChild(roleEl);
 
-    card.appendChild(avatar);
-    card.appendChild(info);
+  card.appendChild(avatar);
+  card.appendChild(info);
 
-    profileContainer.appendChild(card);
+  fragment.appendChild(card);
+
+  //   html += `<div class="profile-section">
+  //   <div class="student-avatar"><span class="avatar-letter">${student.name.charAt(0)}</span></div>
+  //   <div class="student-info">
+  //     <h3>${student.name}</h3>
+  //     <p>${student.email}</p>
+  //     <p>Role: ${student.role}</p>
+  //   </div>
+  // </div>`;
 });
+// profileContainer.innerHTML = html;
+profileContainer.appendChild(fragment);
 
-document.getElementById('profile-output').textContent = '3 პროფილი შეიქმნა';
+document.getElementById("profile-output").textContent = "3 პროფილი შეიქმნა";
 
 ////////////////////////////////////
 // Challenge #2
@@ -128,35 +153,43 @@ GOOD LUCK 😀
 */
 
 // --- Solution ---
-const notificationList = document.getElementById('notification-list');
+const notificationList = document.getElementById("notification-list");
 let notificationCounter = 0;
 
-document.getElementById('btn-add-urgent').addEventListener('click', function () {
+document
+  .getElementById("btn-add-urgent")
+  .addEventListener("click", function () {
     notificationCounter++;
-    const notification = document.createElement('div');
-    notification.classList.add('notification', 'urgent');
-    notification.textContent = '⚠️ Urgent #' + notificationCounter + ': სასწრაფო შეტყობინება!';
+    const notification = document.createElement("div");
+    notification.classList.add("notification", "urgent");
+    notification.textContent =
+      "⚠️ Urgent #" + notificationCounter + ": სასწრაფო შეტყობინება!";
     notificationList.insertBefore(notification, notificationList.firstChild);
-});
+  });
 
-document.getElementById('btn-add-success').addEventListener('click', function () {
+document
+  .getElementById("btn-add-success")
+  .addEventListener("click", function () {
     notificationCounter++;
-    const notification = document.createElement('div');
-    notification.classList.add('notification', 'success');
-    notification.textContent = '✅ Success #' + notificationCounter + ': ოპერაცია წარმატებით შესრულდა!';
+    const notification = document.createElement("div");
+    notification.classList.add("notification", "success");
+    notification.textContent =
+      "✅ Success #" + notificationCounter + ": ოპერაცია წარმატებით შესრულდა!";
     notificationList.appendChild(notification);
-});
+  });
 
-document.getElementById('btn-remove-oldest').addEventListener('click', function () {
+document
+  .getElementById("btn-remove-oldest")
+  .addEventListener("click", function () {
     if (notificationList.firstChild) {
-        notificationList.removeChild(notificationList.firstChild);
+      notificationList.removeChild(notificationList.firstChild);
     }
-});
+  });
 
-document.getElementById('btn-clear-all').addEventListener('click', function () {
-    while (notificationList.firstChild) {
-        notificationList.removeChild(notificationList.firstChild);
-    }
+document.getElementById("btn-clear-all").addEventListener("click", function () {
+  while (notificationList.firstChild) {
+    notificationList.removeChild(notificationList.firstChild);
+  }
 });
 
 ////////////////////////////////////
@@ -208,59 +241,63 @@ GOOD LUCK 😀
 */
 
 // --- Solution ---
-const courseTable = document.getElementById('course-table');
-const tbody = courseTable.querySelector('tbody');
-const tableOutput = document.getElementById('table-output');
+const courseTable = document.getElementById("course-table");
+const tbody = courseTable.querySelector("tbody");
+const tableOutput = document.getElementById("table-output");
 
 const courses = [
-    ['JavaScript საფუძვლები', 'გიორგი ლომიძე', 'ორშაბათი', 2],
-    ['React Framework', 'ნინო ბერიძე', 'სამშაბათი', 3],
-    ['Node.js Backend', 'დათო ხარაიშვილი', 'ოთხშაბათი', 2],
-    ['TypeScript', 'მარიამ კაპანაძე', 'ხუთშაბათი', 2],
-    ['საპროექტო სამუშაო', 'ლევან გიგაური', 'პარასკევი', 4],
+  ["JavaScript საფუძვლები", "გიორგი ლომიძე", "ორშაბათი", 2],
+  ["React Framework", "ნინო ბერიძე", "სამშაბათი", 3],
+  ["Node.js Backend", "დათო ხარაიშვილი", "ოთხშაბათი", 2],
+  ["TypeScript", "მარიამ კაპანაძე", "ხუთშაბათი", 2],
+  ["საპროექტო სამუშაო", "ლევან გიგაური", "პარასკევი", 4],
 ];
 
 function updateTableOutput() {
-    const rowCount = tbody.children.length;
-    tableOutput.textContent = 'სულ: ' + rowCount + ' კურსი';
+  const rowCount = tbody.children.length;
+  tableOutput.textContent = "სულ: " + rowCount + " კურსი";
 }
 
-document.getElementById('btn-build-table').addEventListener('click', function () {
+document
+  .getElementById("btn-build-table")
+  .addEventListener("click", function () {
     const fragment = document.createDocumentFragment();
 
     courses.forEach(function (course) {
-        const tr = document.createElement('tr');
+      const tr = document.createElement("tr");
 
-        course.forEach(function (cellData) {
-            const td = document.createElement('td');
-            td.textContent = cellData;
-            tr.appendChild(td);
-        });
+      course.forEach(function (cellData) {
+        const td = document.createElement("td");
+        td.textContent = cellData;
+        tr.appendChild(td);
+      });
 
-        fragment.appendChild(tr);
+      fragment.appendChild(tr);
     });
 
     tbody.appendChild(fragment);
-    tableOutput.textContent = 'ცხრილი აიგო: ' + courses.length + ' კურსი';
+    tableOutput.textContent = "ცხრილი აიგო: " + courses.length + " კურსი";
+  });
+
+document.getElementById("btn-add-row").addEventListener("click", function () {
+  const tr = document.createElement("tr");
+  const rowData = ["ახალი კურსი", "ლექტორი", "შაბათი", 1];
+
+  rowData.forEach(function (cellData) {
+    const td = document.createElement("td");
+    td.textContent = cellData;
+    tr.appendChild(td);
+  });
+
+  tbody.appendChild(tr);
+  updateTableOutput();
 });
 
-document.getElementById('btn-add-row').addEventListener('click', function () {
-    const tr = document.createElement('tr');
-    const rowData = ['ახალი კურსი', 'ლექტორი', 'შაბათი', 1];
-
-    rowData.forEach(function (cellData) {
-        const td = document.createElement('td');
-        td.textContent = cellData;
-        tr.appendChild(td);
-    });
-
-    tbody.appendChild(tr);
-    updateTableOutput();
-});
-
-document.getElementById('btn-remove-last-row').addEventListener('click', function () {
+document
+  .getElementById("btn-remove-last-row")
+  .addEventListener("click", function () {
     if (tbody.lastElementChild) {
-        tbody.removeChild(tbody.lastElementChild);
-        updateTableOutput();
+      tbody.removeChild(tbody.lastElementChild);
+      updateTableOutput();
     }
-});
+  });
