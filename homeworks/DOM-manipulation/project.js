@@ -89,6 +89,7 @@ function createTransactionEl(tx) {
 function addTransaction(e) {
     e.preventDefault();
 
+    
     const tx = {
         id: nextId++,
         description: descInput.value.trim(),
