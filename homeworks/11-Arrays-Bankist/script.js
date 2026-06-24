@@ -65,6 +65,8 @@ const inputClosePin = document.querySelector(".form__input--pin");
 /////////////////////////////////////////////////
 // LECTURES
 
+
+
 const currencies = new Map([
   ["USD", "United States dollar"],
   ["EUR", "Euro"],
