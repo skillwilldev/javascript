@@ -85,11 +85,13 @@ function createTransactionEl(tx) {
     return row;
 }
 
+
+
 // ─── prepend — ახალი ტრანზაქციის დამატება სიის თავში ─────────
 function addTransaction(e) {
     e.preventDefault();
 
-    
+
     const tx = {
         id: nextId++,
         description: descInput.value.trim(),
