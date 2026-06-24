@@ -87,6 +87,7 @@ function createTransactionEl(tx) {
 
 
 
+
 // ─── prepend — ახალი ტრანზაქციის დამატება სიის თავში ─────────
 function addTransaction(e) {
     e.preventDefault();

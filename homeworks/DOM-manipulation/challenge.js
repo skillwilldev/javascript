@@ -160,6 +160,7 @@ function escapeHTML(str) {
 }
 
 
+
 function addTransaction(e) {
     e.preventDefault();
 
