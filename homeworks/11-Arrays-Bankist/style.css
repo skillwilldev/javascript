@@ -297,3 +297,33 @@ h2 {
 .timer {
     font-weight: 600;
 }
+
+
+/* ////////////////////// */
+.btn__signout {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 10rem;
+    padding: 0.5rem 2rem;
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #444;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn__signout:hover {
+    color: #333;
+    border-color: #999;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.btn__signout:active {
+    transform: scale(0.98);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.hidden {
+    display: none !important;
+}
