@@ -217,7 +217,11 @@ btnClose.addEventListener("click", function (e) {
     console.log(index);
     accounts.splice(index, 1);
 
-    containerApp.style.opacity = 0;
+
+    accounts.splice(index, 1);
+    saveAccountsData();
+    signOut();
+
   }
 
   inputCloseUsername.value = inputClosePin.value = "";
@@ -232,13 +236,18 @@ btnSort.addEventListener("click", function (e) {
 });
 
 /////////////////added 2 lisener/////////////////////
-btnSignOut.addEventListener("click", function () {
+
+function signOut() {
   labelWelcome.textContent = "Log in to get started";
   containerApp.style.opacity = 0;
   loginForm.classList.remove("hidden");
   btnSignOut.classList.add("hidden");
   currentAccount = null;
   localStorage.removeItem("loggedInUser");
+}
+
+btnSignOut.addEventListener("click", function () {
+  signOut();
 });
 
 const checkLogin = function () {
