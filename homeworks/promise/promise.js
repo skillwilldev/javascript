@@ -20,7 +20,8 @@ function orderMaterials(toyName) {
             const success = Math.random() > 0.2;
             if (success) {
                 resolve({ toy: toyName, materials: ["პლასტმასი", "საღებავი", "ჭანჭიკები"] });
-            } else {
+            }
+             else {
                 reject(`მასალის მომწოდებელმა უარი თქვა "${toyName}"-სთვის`);
             }
         }, 1000);
@@ -142,20 +143,42 @@ function sellToy(shipped) {
 // .catch-ით დაიჭირე შეცდომა და დაბეჭდე: "❌ პროცესი შეწყდა: " + error
 
 function runWithThen() {
-    // შენი კოდი აქ
+    orderMaterials("ტედი დათვი")
+        .then(order => manufacture(order))
+        .then(product => qualityCheck(product))
+        .then(checkedProduct => packToy(checkedProduct))
+        .then(packedToy => shipToy(packedToy))
+        .then(shippedToy => sellToy(shippedToy))
+        .then(finalResult => {
+            console.log("all done!", finalResult);
+        })
+        .catch(error => {
+            console.log("error" + error);
+        });
 }
 
-// runWithThen();
+runWithThen();
 
 // -------- სავარჯიშო 2: async/await + try/catch --------
 // იგივე პროცესი async/await-ით
 // სათამაშო: "ლეგო მანქანა"
 
 async function runWithAwait() {
-    // შენი კოდი აქ
+    try {
+        const order = await orderMaterials("ლეგო მანქანა");
+        const product = await manufacture(order);
+        const checkedProduct = await qualityCheck(product);
+        const packedToy = await packToy(checkedProduct);
+        const shippedToy = await shipToy(packedToy);
+        const finalResult = await sellToy(shippedToy);
+
+        console.log("all done!", finalResult);
+    } catch (error) {
+        console.log("error: " + error);
+    }
 }
 
-// runWithAwait();
+runWithAwait();
 
 // -------- სავარჯიშო 3: Promise.all - პარალელური წარმოება --------
 // ერთდროულად გაუშვი 3 სათამაშოს წარმოება: "თოჯინა", "რობოტი", "თვითმფრინავი"
